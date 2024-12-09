@@ -24,8 +24,8 @@ public class SpringWebApplication {
 	
 	//Insert Data
 	
-	e.setE_Id(101);
-	e.setE_Name("Rahul");
+	e.setE_Id(100);
+	e.setE_Name("Raja");
 	e.setE_Salary(10000.0);
 	
 	ed.save(e);
