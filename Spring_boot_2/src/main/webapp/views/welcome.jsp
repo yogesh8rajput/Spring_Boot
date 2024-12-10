@@ -8,5 +8,15 @@
 </head>
 <body>
 <h1>Welcome</h1>
+<form action="insert">
+<pre>
+<input type="text" name="rollno" />
+<input type="text" name="name" />
+<input type="text" name="per" />
+<input type="submit" value="ok" />
+
+<a href="showall">show all</a>
+</pre>
+</form>
 </body>
 </html>

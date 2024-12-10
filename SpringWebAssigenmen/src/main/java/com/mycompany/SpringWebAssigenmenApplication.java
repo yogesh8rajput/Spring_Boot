@@ -44,12 +44,26 @@ public class SpringWebAssigenmenApplication {
 //	for (Faculty fac : f1) {
 //		System.out.println(fac.getF_Name());
 //	}
+	System.out.println("Enter your rollno");
+	int rol=sc.nextInt();
+	Faculty f1=fd.findById(rol).get();
+	System.out.println("Enter your name");
+	sc.nextLine();
+	String nam=sc.nextLine();
 	
-	Faculty f1=fd.findById(101).get();
+    f1.setF_Name(nam);
+    fd.save(f1);
+		System.out.println("daone");
+		
 	
-		System.out.println(f1.getF_Name());
 	
 	
+//	Iterable<Faculty> f1= fd.findAll();
+//	for (Faculty st :f1 ) {
+//		System.out.println(st.getF_Name());
+	//}
+	
+
 	}
 
 }
