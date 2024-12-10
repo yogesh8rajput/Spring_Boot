@@ -14,7 +14,9 @@
    {
 	 %>  
 	  
-	  id:<%= sd.getName() %>
+	   Id:<%= sd.getRollno() %>
+	   Name:<%= sd.getName() %>
+	   Percent:<%= sd.getPer() %>
 	  <% 
    }
 %>

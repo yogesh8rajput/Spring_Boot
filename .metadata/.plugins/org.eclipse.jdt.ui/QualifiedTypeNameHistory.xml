@@ -19,7 +19,6 @@
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="java.security.spec.MGF1ParameterSpec"/>
     <fullyQualifiedTypeName name="com.mycompany.dao.FacultyDao"/>
-    <fullyQualifiedTypeName name="java.lang.Iterable"/>
     <fullyQualifiedTypeName name="com.mycompany.entity.Faculty"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
@@ -28,5 +27,8 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.mycompany.dao.StudentInfoDao"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.mycompany.entity.StudentInfo"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="java.lang.Iterable"/>
 </qualifiedTypeNameHistroy>
