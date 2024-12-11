@@ -63,4 +63,32 @@ public class MyController {
        }
        return "welcome";  
        }
+	  
+	  @RequestMapping("/update")
+//    @ResponseBody
+    public String update(@RequestParam("id") Integer id,Model mo) {
+       Optional<StudentInfo> studentInfo = sd.findById(id);  // Find the doctor by ID
+       if (studentInfo.isPresent()) {
+    	   mo.addAttribute("studentInfo",studentInfo.get());
+    	   return "update";
+          
+       }
+       else {
+       return "welcome"; } 
+       }
+	  
+	  @RequestMapping("/update2")
+//	  @ResponseBody
+	  public String saveupdate(@ModelAttribute StudentInfo studentInfo)
+	  {
+		  sd.save(studentInfo);
+		  return "welcome";
+	  }
+	  
+	  
+	  
+	 
+   
+	  
+	  
 }
