@@ -1,12 +1,14 @@
 package com.mycompany.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mycompany.dao.StudentInfoDao;
@@ -18,6 +20,12 @@ public class MyController {
 //      @ResponseBody
 	public String set() {
 		return "welcome";
+	}
+	
+	@RequestMapping("/")
+
+	public String index() {
+		return "index";
 	}
 
 	@RequestMapping("/one1")
@@ -43,5 +51,16 @@ public class MyController {
 		Iterable<StudentInfo> si = sd.findAll();
 		mo.addAttribute("list", si);
 		return "showAll";
+		
 	}
+	
+	  @RequestMapping("/delete")
+//    @ResponseBody
+    public String delete(@RequestParam("id") Integer id) {
+       Optional<StudentInfo> studentInfo = sd.findById(id);  // Find the doctor by ID
+       if (studentInfo.isPresent()) {
+         sd.delete(studentInfo.get());  
+       }
+       return "welcome";  
+       }
 }

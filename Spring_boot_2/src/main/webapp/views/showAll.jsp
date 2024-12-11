@@ -14,7 +14,9 @@
    {
 	 %>  
 	  
-	   Id:<%= sd.getRollno() %>
+	   Id:<%= sd.getRollno() %><a href="delete?id=<%= sd.getRollno() %>">delete</a>
+<a href="update?id=<%= sd.getRollno() %>">==Update</a>
+	   
 	   Name:<%= sd.getName() %>
 	   Percent:<%= sd.getPer() %>
 	  <% 
