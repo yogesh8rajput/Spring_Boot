@@ -15,7 +15,7 @@
 %>
 
  <h1>Update Student</h1>
-    <form action="/update2" method="post">
+    <form action="update2" method="post">
         <input type="hidden" name="rollno" value=<%= sf.getRollno() %>>
 
         <label for="name">Name:</label>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mycompany.dao.StudentInfoDao;
 import com.mycompany.entity.StudentInfo;
@@ -42,7 +43,7 @@ public class MyController {
 	public String insert(@ModelAttribute StudentInfo studentInfo) {
 		sd.save(studentInfo);
 
-		return "show";
+		return "redirect:/showall";
 	}
 
 	@RequestMapping("/showall")
@@ -77,12 +78,16 @@ public class MyController {
        return "welcome"; } 
        }
 	  
+	  
+	  
 	  @RequestMapping("/update2")
 //	  @ResponseBody
-	  public String saveupdate(@ModelAttribute StudentInfo studentInfo)
+	  public String saveupdate(@ModelAttribute StudentInfo studentInfo, RedirectAttributes rd)
 	  {
 		  sd.save(studentInfo);
-		  return "welcome";
+		  rd.addFlashAttribute("message","Suuuuccccceeeeesssssfuuulllyyy!");
+//		  return "redirect:../showAll";
+		  return "redirect:/showall";
 	  }
 	  
 	  
