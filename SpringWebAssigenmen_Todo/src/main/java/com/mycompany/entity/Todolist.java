@@ -1,7 +1,9 @@
 package com.mycompany.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class Todolist {
@@ -9,7 +11,15 @@ public class Todolist {
 	  @Id
 	  Integer t_no;
 	  String t_name;
-	  String t_msg;
+	  String t_msg;	  
+	  @Column(columnDefinition = "LONGBLOB" )
+	  byte[] t_img;
+	public byte[] getT_img() {
+		return t_img;
+	}
+	public void setT_img(byte[] t_img) {
+		this.t_img = t_img;
+	}
 	public Integer getT_no() {
 		return t_no;
 	}
