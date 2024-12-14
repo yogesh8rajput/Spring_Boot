@@ -7,16 +7,16 @@
 </head>
 <body>
     <h1>Insert Todolist</h1>
-    <form action="insert1" method="POST" enctype="multipart/form-data">
-        <label for="t_name">Task Name: </label>
-        <input type="text" name="t_name" id="t_name" required><br><br>
- <label for="t_name">Task id: </label>
-        <input type="text" name="t_id" id="t_id" required><br><br>
+    <form action="in1" method="post" enctype="multipart/form-data">
+         <input type="text" name="t_id"  required/><br><br>
+        <input type="text" name="t_name"  required/><br><br>
+      
+       <input type="text" name="t_msg"  required><br><br>
 
-        <label for="file">Upload Image: </label>
-        <input type="file" name="file" id="file" required><br><br>
 
-        <button type="submit">Upload</button>
+                <input type="file" name="file"  required/><br><br>
+
+        <input type="submit" value ="submit"/>
     </form>
 </body>
 </html>

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,18 +28,21 @@ public class MyController {
     }
 
     // Handle the form submission for inserting a new task with image
-    @PostMapping("/in")
-    public String insert(@ModelAttribute Todolist todolist, MultipartFile file) throws IOException {
-        if (!file.isEmpty()) {
-            // Store the image file's bytes in the todolist entity
-            todolist.setT_msg(file.getOriginalFilename());
-            todolist.setT_name(file.getOriginalFilename());
-            todolist.setT_img(file.getBytes());
-             // Set image name as the file name
-            tld.save(todolist);
-        }
+    @PostMapping("/in1")
+    @ResponseBody
+    public String in(@ModelAttribute Todolist todolist,  MultipartFile file) throws IOException {
+        // Convert MultipartFile to byte[]
+    	if (!file.isEmpty()) {
+        todolist.setT_img(file.getBytes());
+        todolist.setT_name(file.getOriginalFilename());
+        // Assuming there's a setT_img method in Todolist
+         tld.save(todolist);
+        // Continue with your logic...
+         return "redirect:/success";  
+
         // Save the Todolist entity with image to the database
-        tld.save(todolist);
+       
+    	}
         // Redirect to show all tasks page
         return "redirect:/show_all_t";
     }
