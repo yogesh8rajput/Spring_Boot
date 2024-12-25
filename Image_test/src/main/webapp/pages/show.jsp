@@ -25,7 +25,7 @@
         <p>Message: <%= i.getI_img() %></p>
         <p>Image: 
             <% if (!base64Image.isEmpty()) { %>
-                <img src="data:image/jpeg;base64,<%= base64Image %>" alt="Image not found" width="200"/>
+                <img src="data:image/jpg;base64,<%= base64Image %>" alt="Image not found" width="200"/>
             <% } else { %>
                 No image available
             <% } %>
